@@ -9,8 +9,8 @@ type Props = {
 const Heading: React.FC<Props> = ({ title, subTitle, center }) => {
   return (
     <div className={center ? "text-center" : "text-start"}>
-      <div className="font-bold text-2xl">{title}</div>
-      <div className="font-light mt-2 text-neutral-500">{subTitle}</div>
+      <h3 className="font-bold text-2xl">{title}</h3>
+      <p className="font-light mt-2 text-neutral-500">{subTitle}</p>
     </div>
   );
 };
