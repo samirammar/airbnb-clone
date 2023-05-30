@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Modal from "./components/modals/Modal";
 import RegisterModal from "./components/modals/RegisterModal";
 import Navbar from "./components/navbar/Navbar";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
+        <Toaster />
         <RegisterModal />
         <Navbar />
         {children}
