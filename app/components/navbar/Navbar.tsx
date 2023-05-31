@@ -10,8 +10,6 @@ type Props = {
 };
 
 const Navbar: React.FC<Props> = ({ currentUser }) => {
-  console.log(currentUser);
-
   return (
     <div className="w-full fixed bg-white shadow-sm z-10">
       <div className="py-4 border-b-[1px]">
