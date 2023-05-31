@@ -4,6 +4,8 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import LoginModal from "./components/modals/LoginModal";
 import ToasterProvider from "./providers/ToasterProvider";
+import { getCurrentUser } from "./actions/getCurrentUser";
+import { User } from "@prisma/client";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -12,18 +14,20 @@ export const metadata = {
   description: "Create a new airbnb clone",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser: User | null = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={nunito.className}>
         <ToasterProvider />
         <LoginModal />
         <RegisterModal />
-        <Navbar />
+        <Navbar currentUser={currentUser} />
         {children}
       </body>
     </html>
