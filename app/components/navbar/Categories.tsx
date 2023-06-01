@@ -2,6 +2,8 @@ import React from "react";
 import { TbBeach } from "react-icons/tb";
 import { GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
+import { usePathname, useSearchParams } from "next/navigation";
+import Category from "./Category";
 
 const categories = [
   {
@@ -21,9 +23,23 @@ const categories = [
   },
 ];
 const Categories = () => {
+  const params = useSearchParams();
+  const categoryParam = params?.get("category");
+  const pathName = usePathname();
+
+  if (pathName !== "/") {
+    return null;
+  }
   return (
     <div className="flex flex-row items-center justify-between overscroll-x-auto pt-4">
-      Categories
+      {categories.map((category) => (
+        <Category
+          key={category.label}
+          icon={category.icon}
+          label={category.label}
+          selected={categoryParam === category.label}
+        />
+      ))}
     </div>
   );
 };
