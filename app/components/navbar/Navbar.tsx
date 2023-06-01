@@ -4,6 +4,7 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
+import Categories from "./Categories";
 
 type Props = {
   currentUser?: User | null;
@@ -11,7 +12,7 @@ type Props = {
 
 const Navbar: React.FC<Props> = ({ currentUser }) => {
   return (
-    <div className="w-full fixed bg-white shadow-sm z-10">
+    <header className="w-full fixed bg-white shadow-sm z-10">
       <div className="py-4 border-b-[1px]">
         <Container>
           <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
@@ -21,7 +22,10 @@ const Navbar: React.FC<Props> = ({ currentUser }) => {
           </div>
         </Container>
       </div>
-    </div>
+      <Container>
+        <Categories />
+      </Container>
+    </header>
   );
 };
 
