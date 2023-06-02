@@ -47,6 +47,12 @@ const LoginModal = () => {
     });
   };
 
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
+
+  // body component
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcon back" subTitle="Login to your account" />
@@ -70,6 +76,7 @@ const LoginModal = () => {
     </div>
   );
 
+  // footer component
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
@@ -86,13 +93,17 @@ const LoginModal = () => {
         onClick={() => signIn("github")}
       />
       <div className="flex flex-row items-center justify-center gap-2">
-        <span>Don{"'"}t have an account?</span>
-        <span className="hover:underline text-neutral-800 cursor-pointer">
-          Redister
+        <span>First time using Airbnb</span>
+        <span
+          onClick={toggle}
+          className="hover:underline text-neutral-800 cursor-pointer"
+        >
+          Create an account
         </span>
       </div>
     </div>
   );
+
   return (
     <Modal
       disabled={isLoading}
