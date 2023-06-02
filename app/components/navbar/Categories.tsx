@@ -16,7 +16,7 @@ import { IoDiamond } from "react-icons/io5";
 import { usePathname, useSearchParams } from "next/navigation";
 import Category from "./Category";
 
-const categories = [
+export const categories = [
   {
     label: "Beach",
     icon: TbBeach,
