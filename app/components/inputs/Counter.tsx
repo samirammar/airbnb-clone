@@ -25,11 +25,11 @@ const Counter: React.FC<Props> = ({ title, subTitle, value, onChange }) => {
         <div className="font-light text-gray-600">{subTitle}</div>
       </div>
       <div className="flex flex-row items-center gap-4">
-        <div onClick={onAdd} className="counter-btn">
+        <div onClick={onReduce} className="counter-btn">
           <AiOutlineMinus />
         </div>
         <div className="font-light text-xl text-neutral-600">{value}</div>
-        <div onClick={onReduce} className="counter-btn">
+        <div onClick={onAdd} className="counter-btn">
           <AiOutlinePlus />
         </div>
       </div>
