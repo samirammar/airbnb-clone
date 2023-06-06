@@ -14,3 +14,9 @@ body,
 .leaflet-top {
   z-index: 0 !important;
 }
+
+@layer components {
+  .counter-btn {
+    @apply w-10 h-10 rounded-full border-[1px] border-neutral-400 flex items-center justify-center text-neutral-600 cursor-pointer transition hover:opacity-80;
+  }
+}
