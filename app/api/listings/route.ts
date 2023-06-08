@@ -2,12 +2,13 @@ import { getCurrentUser } from "@/app/actions/getCurrentUser";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
-async function POST(req: Request) {
+export async function POST(req: Request) {
   const currentUser = await getCurrentUser();
 
   if (!currentUser) return NextResponse.error();
 
   const body = await req.json();
+
   const {
     title,
     description,
