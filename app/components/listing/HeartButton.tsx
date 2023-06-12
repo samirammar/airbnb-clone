@@ -1,3 +1,4 @@
+"use client";
 import useFavorite from "@/app/hooks/useFavorite";
 import { User } from "@prisma/client";
 import React from "react";
