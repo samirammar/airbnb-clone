@@ -10,7 +10,7 @@ import axios from "axios";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Range } from "react-date-range";
+import { Range, RangeKeyDict } from "react-date-range";
 import { toast } from "react-hot-toast";
 
 const initialDateRange = {
@@ -98,6 +98,13 @@ const ListingClient: React.FC<Props> = ({
     return categories.find((item) => item.label === listing.category);
   }, [listing.category]);
 
+  const handleDateChange = (value: RangeKeyDict) => {
+    setDateRange({
+      startDate: value.selection.startDate,
+      endDate: value.selection.endDate,
+      key: value.selection.key,
+    });
+  };
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">
@@ -126,7 +133,7 @@ const ListingClient: React.FC<Props> = ({
                 dateRange={dateRange}
                 disabledDates={disabledDates}
                 disabled={isLoading}
-                onChangeDate={(value: Range) => setDateRange(value)}
+                onChangeDate={handleDateChange}
                 onSubmit={onCreateReservation}
               />
             </div>
