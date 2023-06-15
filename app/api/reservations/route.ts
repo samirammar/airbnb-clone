@@ -2,12 +2,14 @@ import { getCurrentUser } from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
-async function POST(req: Request) {
+export async function POST(req: Request) {
   const currentUser = await getCurrentUser();
 
   if (!currentUser) return NextResponse.error();
 
   const body = await req.json();
+
+  console.log(body);
 
   const { totalPrice, startDate, endDate, listingId } = body;
 
