@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Range } from "react-date-range";
+import { Range, RangeKeyDict } from "react-date-range";
 import Calendar from "../inputs/Calendar";
 import Button from "../Button";
 
@@ -9,7 +9,7 @@ type Props = {
   price: number;
   totalPrice: number;
   dateRange: Range;
-  onChangeDate: (value: Range) => void;
+  onChangeDate: (value: RangeKeyDict) => void;
   onSubmit: () => void;
   disabled?: boolean;
   disabledDates: Date[];
@@ -41,8 +41,8 @@ const ListingReservation: React.FC<Props> = ({
         <Button label="Reserve" disabled={disabled} onClick={onSubmit} />
       </div>
       <div className="flex flex-row items-center justify-center p-4 font-semibold text-lg">
-        <span>total</span>
-        <span>$ {totalPrice}</span>
+        <span>total </span>
+        <span>${totalPrice}</span>
       </div>
     </div>
   );
