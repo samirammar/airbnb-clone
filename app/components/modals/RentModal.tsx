@@ -45,7 +45,7 @@ const RentModal = () => {
       category: "",
       roomCount: 1,
       bathroomCount: 1,
-      geustCount: 1,
+      guestCount: 1,
       location: null,
       price: 1,
     },
@@ -53,7 +53,7 @@ const RentModal = () => {
 
   const category = watch("category");
   const location = watch("location");
-  const geustCount = watch("geustCount");
+  const guestCount = watch("guestCount");
   const roomCount = watch("roomCount");
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
@@ -160,8 +160,8 @@ const RentModal = () => {
           <Counter
             title="Guests"
             subTitle="How many guests do you allow?"
-            value={geustCount}
-            onChange={(value) => setCustomValue("geustCount", value)}
+            value={guestCount}
+            onChange={(value) => setCustomValue("guestCount", value)}
           />
           <hr />
           <Counter
