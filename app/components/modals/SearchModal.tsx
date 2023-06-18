@@ -44,12 +44,11 @@ const SearchModal = () => {
   }, []);
 
   const onNext = useCallback(() => {
-    if (step === STEPS.INFO) return;
     setStep((value) => value + 1);
-  }, [step]);
+  }, []);
 
   const onSubmit = useCallback(() => {
-    if (step === STEPS.INFO) return onNext();
+    if (step !== STEPS.INFO) return onNext();
 
     let currentQuery = {};
 
