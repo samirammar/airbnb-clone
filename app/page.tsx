@@ -8,6 +8,8 @@ interface Props {
   searchParams: IListingsParams;
 }
 
+export const dynamic = "force-dynamic";
+
 const Home = async ({ searchParams }: Props) => {
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
