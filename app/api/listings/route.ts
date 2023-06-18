@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     category,
     roomCount,
     bathroomCount,
-    geustCount,
+    guestCount,
     location,
     price,
   } = body;
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       category,
       roomCount,
       bathroomCount,
-      geustCount,
+      guestCount,
       locationValue: location.value,
       price: parseInt(price, 10),
       userId: currentUser.id,
