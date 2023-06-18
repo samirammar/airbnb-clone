@@ -123,7 +123,7 @@ const ListingClient: React.FC<Props> = ({
               description={listing.description}
               bathroomCount={listing.bathroomCount}
               roomCount={listing.roomCount}
-              guestCount={listing.geustCount}
+              guestCount={listing.guestCount}
               locationValue={listing.locationValue}
             />
             <div className="order-first mb-10 md:order-last md:col-span-3">
