@@ -8,7 +8,7 @@ interface Props {
   searchParams: IListingsParams;
 }
 
-export default async function Home({ searchParams }: Props) {
+const Home = async ({ searchParams }: Props) => {
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
@@ -31,4 +31,6 @@ export default async function Home({ searchParams }: Props) {
       </div>
     </Container>
   );
-}
+};
+
+export default Home;
